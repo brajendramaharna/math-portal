@@ -1,0 +1,13 @@
+
+html body:has(>.app[data-mode=browse]),html body #dgRoot:has(.app[data-mode=browse]){background:#20162b}
+html body .app[data-mode=browse]{--bg:#20162b;--card:#2a2038;--ink:#faf6ff;--mut:#c8bada;--line:#493858;--ac:#bb92ed;--soft:#382945;color:var(--ink);background:var(--bg);line-height:1.55}
+html body .app[data-mode=browse] header{text-align:left}
+html body .app[data-mode=browse] header h1{color:#bd8bed;-webkit-text-fill-color:#bd8bed;background:none;font-weight:800}
+html body .app[data-mode=browse] header p{color:var(--mut);font-weight:650}
+html body :is(#dgRoot,.app) #browse .bh{display:block}
+html body :is(#dgRoot,.app) #browse .bq{box-sizing:border-box;width:min(100%,396px);max-width:none;margin-top:12px}
+html body :is(#dgRoot,.app) #browse .cols{column-count:2;column-width:auto}
+html body :is(#dgRoot,.app) #browse .sk{padding-block:8px}
+html body .app[data-mode=browse] #path{display:none}
+html body :is(#dgRoot,.app) #browse [hidden]{display:none!important}
+@media(max-width:700px){html body :is(#dgRoot,.app) #browse .cols{column-count:1}}

@@ -1,0 +1,43 @@
+#ptApp .tale{--deep:#2c1d3c;--grape:#654298;color:var(--deep);font-family:Inter,"Segoe UI",sans-serif;line-height:1.6;background:#fcfbff}
+#ptApp .tale :is(h1,h2){color:inherit;font-family:inherit;letter-spacing:-.063em;font-weight:670;line-height:1.02;margin:13px 0 18px}
+#ptApp .tale h1{font-size:clamp(3.1rem,6.1vw,6.5rem)}
+#ptApp .tale h2{font-size:clamp(2.35rem,4.65vw,4.9rem)}
+#ptApp .tale .kicker,.tale .lab-title{font-size:.88rem;font-weight:700;letter-spacing:.035em;margin:0}
+.tale :is(.opening-copy,.narrative,.closing>div)>p:not(.kicker){max-width:42ch;font-size:clamp(1rem,1.3vw,1.19rem);line-height:1.65;margin:14px 0 24px}
+.tale .opening{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 80% 56%,#e3d4fa 0,transparent 44%),linear-gradient(115deg,#faf8ff,#eee7fa);display:grid;grid-template-columns:1.08fr .92fr;align-items:center;min-height:clamp(510px,73svh,770px);padding:clamp(48px,8vw,120px) max(6vw,calc((100vw - 1180px)/2));gap:2vw}
+.tale .opening-copy{z-index:1}
+.tale .opening-copy h1 em{font-family:Georgia,serif;font-weight:400;color:#624893}
+.tale button,.tale select,.tale summary{font:inherit;cursor:pointer}
+#ptApp .tale .action,.tale .fold-controls button,.tale .answers button{background:#573780;color:white;border:0;border-radius:12px;padding:12px 20px;font-size:1rem;font-weight:650}
+.tale .opening-copy>a,.tale .quiet{display:inline-block;margin:10px 12px;color:inherit;font-weight:650;text-underline-offset:4px}
+.tale .fold-stage{height:clamp(235px,29vw,370px);position:relative;perspective:1000px}
+.tale .fold-shadow{position:absolute;inset:72% 0 1%;background:#a58dbb;filter:blur(25px);border-radius:50%;opacity:.45}
+.tale .fold-paper{position:absolute;inset:3% 3% 12%;display:flex;transform:rotateX(22deg) rotateY(-14deg) rotateZ(-13deg);filter:drop-shadow(8px 18px 12px #51327435)}
+.tale .fold-paper i{flex:1;background:linear-gradient(120deg,#c9b2f0,#926ac7);clip-path:polygon(0 12%,100% 0,100% 88%,0 100%)}
+.tale .fold-paper i:nth-child(even){background:linear-gradient(110deg,#eee6fb,#c5b0e8);clip-path:polygon(0 0,100% 12%,100% 100%,0 88%)}
+.tale .fold-paper i:nth-child(n+5){background:linear-gradient(130deg,#e6e1ed,#c0b7ca)}
+.tale .fold-paper i:nth-child(2n+6){background:linear-gradient(100deg,#fff,#e4dfea)}
+.tale .chapter-inner{max-width:1240px;padding:clamp(66px,9vw,140px) 4vw;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}
+.tale .lesson{background:#fbf9fd}.tale .book{background:#ede8f5}.tale .game{background:#eaf3e9}
+.tale .book .narrative{grid-column:2}.tale .book .exhibit{grid-row:1;grid-column:1}
+.tale .exhibit{padding:clamp(24px,3.7vw,55px);min-height:290px;border-radius:26px;background:white;box-shadow:0 16px 48px #3322440c;border:1px solid #38214215}
+.tale .fraction-paper{display:flex;height:86px;margin:35px 0 18px;background:linear-gradient(to right,#9771c5 50%,#efe9f8 50%);border:1px solid #7c638c;border-radius:6px;overflow:hidden}
+.tale .fraction-paper i{flex:1;border-right:1px dashed #594368}.tale .fraction-paper i:last-child{border:0}
+.tale .fraction-caption{display:block;min-height:2.7em}.tale .fold-controls,.tale .answers{display:flex;gap:8px;flex-wrap:wrap}
+.tale .fold-controls button:disabled{background:#eee9f3;color:#776d7f;cursor:default}
+.tale .grade-form label{display:block;font-weight:650}.tale .grade-form div{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
+.tale .grade-form select{padding:10px 16px;color:#382149;background:#fff;border:1px solid #8c7c99;border-radius:10px}
+.tale .notebook{background:repeating-linear-gradient(white 0 33px,#e8e1f0 34px,white 35px)}
+.tale .equation,.tale .pattern{font:500 clamp(2.3rem,4.5vw,4.1rem)/1.3 Georgia,serif;margin:26px 0;color:#402950}
+.tale summary{font-weight:650;color:#643d8e;padding:6px 0}.tale details p{margin:6px 0}.tale details strong{font:600 1.4rem Georgia,serif}
+.tale .puzzle{background:#253b36;color:#f4fff7}.tale .pattern{color:white}.tale .pattern em{color:#c3ed9f}
+.tale .answers button{background:#f1f7ed;color:#293e35;min-width:62px}.tale .answers button[aria-pressed=true]{background:#c4ef9e}.tale .answer-note{min-height:2em;margin:12px 0 0}
+.tale .closing{background:#302139;color:#fff;text-align:center;padding:clamp(68px,9vw,140px) 20px 35px}.tale .closing>div>p:not(.kicker){margin-inline:auto}
+#ptApp .tale .closing .action{background:#d2efb8;color:#263920}.tale .quiet,.tale .tutor-link button{background:none;border:0;color:inherit;text-decoration:underline}
+.tale .tutor-link{margin:50px 0 0;font-size:.94rem;color:#e2d6e9}
+.tale :focus-visible{outline:3px solid #b16ac8;outline-offset:4px}
+@media(prefers-reduced-motion:no-preference){.tale .fold-paper{animation:paper-open 1.15s cubic-bezier(.18,.69,.3,1) both}.tale .arrived .narrative,.tale .closing>.arrived{animation:arrive .75s ease-out both}.tale .arrived .exhibit{animation:arrive .9s .1s ease-out both}.tale .fraction-paper i{animation:crease .45s ease-out}.tale{scroll-behavior:smooth}
+@keyframes paper-open{from{opacity:.2;transform:translateY(18px) rotateX(32deg) rotateY(-25deg) rotateZ(-13deg) scaleX(.53)}}
+@keyframes arrive{from{opacity:.12;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes crease{from{opacity:0}to{opacity:1}}}
+@media(max-width:740px){.tale .opening,.tale .chapter-inner{grid-template-columns:1fr;gap:23px;padding:48px 22px}.tale .opening{min-height:0}.tale .fold-stage{height:190px;max-width:320px;width:100%;justify-self:center}.tale .book .narrative,.tale .book .exhibit{grid-column:auto;grid-row:auto}.tale .exhibit{min-height:0}.tale .opening-copy>a{margin-left:0;padding:0 8px}}

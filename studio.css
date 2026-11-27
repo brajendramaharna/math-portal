@@ -1,0 +1,45 @@
+html:root{--studio-plum:#281b38;--studio-violet:#7142bd;--studio-light:#f6f3fb;--studio-font:Inter,"Segoe UI",system-ui,sans-serif;--ap-font:var(--studio-font);--ap-blue:#6c3cb6;--ap-blue-h:#553095;--ap-link:#6940ac;--ap-band:#281b38;--pt-p:#523180;--pt-p2:#7041b9}
+html body .studio-bar,html body .studio-hero{font-family:var(--studio-font);color:#faf7ff;background:var(--studio-plum);text-align:left}
+.studio-bar *,.studio-hero *{box-sizing:border-box}
+.studio-bar{position:relative;z-index:55;border-bottom:1px solid #554265}
+.studio-row{max-width:1160px;margin:auto;min-height:68px;display:flex;align-items:center;gap:42px;padding:8px 22px}
+.studio-bar a{color:#e3d9ee;text-decoration:none;font-weight:650}
+.studio-brand{display:inline-flex;align-items:center;gap:9px;font-size:1.27rem;letter-spacing:-.035em}
+.studio-brand b{display:grid;place-items:center;background:#c7ffa6;color:#30223c;border-radius:11px;width:36px;height:36px;font-size:1.6rem}
+.studio-row nav{display:flex;gap:5px}
+.studio-row nav a,.studio-account{padding:9px 15px;border-radius:10px;font-size:1rem}
+.studio-row nav a[aria-current],.studio-row nav a:hover{color:white;background:#503763}
+.studio-account{margin-left:auto;border:1px solid #896d9a}
+.studio-bar a:focus-visible,.studio-hero button:focus-visible{outline:3px solid #d4ffa9;outline-offset:3px}
+html body #ptApp .studio-hero{background:linear-gradient(115deg,#291c3a,#44305c);color:#faf7ff}
+.studio-hero-inner{max-width:1160px;margin:auto;padding:clamp(32px,5vw,76px) 22px;display:grid;grid-template-columns:1.05fr 1fr;gap:8%;align-items:center}
+html body #ptApp .studio-intro h1{font:750 clamp(2.8rem,5.6vw,5rem)/1.02 var(--studio-font);letter-spacing:-.055em;color:white;margin:9px 0 18px}
+.studio-intro em{font-style:normal;color:#cdf4b8}
+.studio-intro p{font-size:1.1rem;line-height:1.55;max-width:38ch;color:#e4dcec}
+.studio-intro .studio-levels{font-size:.95rem;color:#decbf4;font-weight:650;margin:0}
+.studio-primary{background:#cef2b9;color:#2c2236;border:0;border-radius:12px;font:700 1rem var(--studio-font);padding:14px 19px;cursor:pointer}
+.studio-paths{display:grid;gap:12px}
+.studio-paths button{background:#fff;color:#281b38;border:0;border-radius:16px;padding:18px;display:flex;align-items:center;text-align:left;gap:16px;font-family:inherit;cursor:pointer}
+.studio-paths button:hover{background:#f2eaff}
+.studio-paths i{display:grid;place-items:center;flex:none;width:49px;height:49px;border-radius:14px;background:#ece0fa;color:#623493;font:italic 700 30px Georgia,serif}
+.studio-paths button:nth-child(2) i{background:#dbf1cc;color:#3e6532}.studio-paths button:nth-child(3) i{background:#ffead3;color:#834e22}
+.studio-paths strong,.studio-paths small{display:block}
+.studio-paths strong{font-size:1.18rem}.studio-paths small{font-size:.94rem;color:#62586a;margin-top:3px}
+html:not(#ap) body #ptApp .pt-navrow>a:first-child,html:not(#ap) body #ptApp .pt-links,html:not(#ap) body #mqBar .mqLogo,html:not(#ap) body #mqBar .mqTabs{display:none}
+html:not(#ap) body #mqBar{display:flex;justify-content:flex-end;position:static;min-height:0;padding:5px max(18px,calc((100vw - 1116px)/2));background:#f1ebf7;color:#443252;border-bottom:1px solid #dfd2eb}
+html:not(#ap) body #mqXp{color:#523180;background:transparent}
+html:not(#ap) body #ptMQback{position:static;background:#f1ebf7;border:0}
+html:not(#ap) body #ptMQback:not(:has(#ptHwNote:not(:empty))){display:none}
+html:not(#ap) body .pt-nav{position:static}
+html:not(#ap) body #ptApp .pt-demo{background:#f3edf8;color:#51405c;font:500 .875rem/1.5 var(--studio-font);padding:6px 16px}
+html:not(#ap) body #ptApp .pt-card,html:not(#ap) body #dgRoot .card,html:not(#ap) body #arRoot .panel,html body>.app .card{border-radius:16px}
+html:not(#ap) body .pt-gchip{cursor:pointer;font:650 1rem var(--studio-font)}
+html:not(#ap) body #arRoot .mode:hover,html:not(#ap) body #ptApp .pt-gchip:hover{border-color:#9a74c8}
+html:not(#ap) body .app,html:not(#ap) body #ptApp,html:not(#ap) body #ptRun{font-family:var(--studio-font)}
+html:not(#ap) body #arRoot .top,html:not(#ap) body #dgRoot header,html:not(#ap) body>.app>header{padding:18px 20px;border-radius:16px;background:#31213f;color:white;margin-bottom:12px;text-align:left}
+html:not(#ap) body #arRoot .top .logo,html:not(#ap) body #dgRoot header h1,html:not(#ap) body>.app>header h1{color:#eee4fa;-webkit-text-fill-color:#eee4fa;font:750 clamp(1.7rem,3vw,2.2rem)/1.18 var(--studio-font);letter-spacing:-.035em;margin:0}
+html:not(#ap) body #dgRoot header p,html:not(#ap) body>.app>header p,html:not(#ap) body #arRoot .top small{color:#d9cae4}
+html:not(#ap) body #arRoot .mode .go{color:var(--ap-link)}
+html:not(#ap) body #ptApp .pt-btn.primary,html:not(#ap) body #dgRoot .btn:not(.ghost),html:not(#ap) body #arRoot .btn:not(.ghost){border-radius:12px}
+html body:has(#ptRun:not([hidden])) .studio-bar{display:none}
+@media(max-width:700px){.studio-row{gap:8px;flex-wrap:wrap;padding:9px 14px}.studio-brand{font-size:1.12rem}.studio-row nav{order:3;flex-basis:100%}.studio-row nav a{flex:1;text-align:center;padding:7px}.studio-account{font-size:.93rem;padding:6px 11px}.studio-hero-inner{grid-template-columns:1fr;gap:24px;padding:32px 16px}.studio-paths button{padding:13px}.studio-intro p{margin:12px 0}}
