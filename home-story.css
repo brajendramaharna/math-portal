@@ -1,12 +1,13 @@
 #ptApp .tale{--deep:#2c1d3c;--grape:#654298;color:var(--deep);font-family:Inter,"Segoe UI",sans-serif;line-height:1.6;background:#fcfbff}
-#ptApp .tale :is(h1,h2){color:inherit;font-family:inherit;letter-spacing:-.063em;font-weight:670;line-height:1.02;margin:13px 0 18px}
-#ptApp .tale h1{font-size:clamp(3.1rem,6.1vw,6.5rem)}
+html:not(#ap) body #ptApp .tale :is(h1,h2){color:inherit;font-family:inherit;letter-spacing:-.063em;font-weight:670;line-height:1.02;margin:13px 0 18px}
+html:not(#ap) body #ptApp .tale .opening h1{color:var(--deep);-webkit-text-fill-color:currentColor;font-size:clamp(2.5rem,4.6vw,4.5rem);line-height:1.06}
 #ptApp .tale h2{font-size:clamp(2.35rem,4.65vw,4.9rem)}
 #ptApp .tale .kicker,.tale .lab-title{font-size:.88rem;font-weight:700;letter-spacing:.035em;margin:0}
 .tale :is(.opening-copy,.narrative,.closing>div)>p:not(.kicker){max-width:42ch;font-size:clamp(1rem,1.3vw,1.19rem);line-height:1.65;margin:14px 0 24px}
 .tale .opening{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 80% 56%,#e3d4fa 0,transparent 44%),linear-gradient(115deg,#faf8ff,#eee7fa);display:grid;grid-template-columns:1.08fr .92fr;align-items:center;min-height:clamp(510px,73svh,770px);padding:clamp(48px,8vw,120px) max(6vw,calc((100vw - 1180px)/2));gap:2vw}
-.tale .opening-copy{z-index:1}
-.tale .opening-copy h1 em{font-family:Georgia,serif;font-weight:400;color:#624893}
+.tale .opening-copy{z-index:1;min-width:0}
+html:not(#ap) body #ptApp .tale .opening-copy>a{color:#533677;text-decoration:underline}
+html:not(#ap) body #ptApp .tale .opening-copy h1 em{-webkit-text-fill-color:currentColor;font-family:Georgia,serif;font-weight:400;color:#624893}
 .tale button,.tale select,.tale summary{font:inherit;cursor:pointer}
 #ptApp .tale .action,.tale .fold-controls button,.tale .answers button{background:#573780;color:white;border:0;border-radius:12px;padding:12px 20px;font-size:1rem;font-weight:650}
 .tale .opening-copy>a,.tale .quiet{display:inline-block;margin:10px 12px;color:inherit;font-weight:650;text-underline-offset:4px}
