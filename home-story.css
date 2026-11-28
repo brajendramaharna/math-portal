@@ -42,3 +42,11 @@ html:not(#ap) body #ptApp .tale .opening-copy h1 em{-webkit-text-fill-color:curr
 @keyframes arrive{from{opacity:.12;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes crease{from{opacity:0}to{opacity:1}}}
 @media(max-width:740px){.tale .opening,.tale .chapter-inner{grid-template-columns:1fr;gap:23px;padding:48px 22px}.tale .opening{min-height:0}.tale .fold-stage{height:190px;max-width:320px;width:100%;justify-self:center}.tale .book .narrative,.tale .book .exhibit{grid-column:auto;grid-row:auto}.tale .exhibit{min-height:0}.tale .opening-copy>a{margin-left:0;padding:0 8px}}
+
+#ptApp .tale .opening{background:radial-gradient(ellipse at 80% 55%,#dbc4fc,transparent 46%),linear-gradient(115deg,#fffaff,#f0e7ff)}
+#ptApp .tale .lesson{background:#fff8e9}
+#ptApp .tale .book{background:#f0e8ff}
+#ptApp .tale .game{background:#e1f5f0}
+#ptApp .tale .fold-paper i:nth-child(5){background:linear-gradient(130deg,#abdfd2,#75bdba)}
+#ptApp .tale .fold-paper i:nth-child(6){background:linear-gradient(100deg,#e1fff4,#a6d9d0)}
+#ptApp .tale .puzzle,#ptApp .tale .closing{color:#fff}

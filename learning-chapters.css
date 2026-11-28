@@ -44,3 +44,38 @@ html:not(#ap) body #ptApp .pt-sec .auth{border-top:5px solid #bba0ce}
  @keyframes chapter-rise{from{opacity:.55;transform:translateY(12px)}to{opacity:1;transform:none}}
 }
 @media(max-width:680px){html:not(#ap) body #arRoot .app #modes{grid-template-columns:1fr}html:not(#ap) body .app[data-mode] header::after{display:none}html:not(#ap) body #browse summary small{display:block;margin-left:0}html:not(#ap) body #arRoot .top .logo{font-size:1.9rem}}
+
+/* Keep interface colours paired when the operating system requests dark mode. */
+html:root,html:root[data-theme],html:not(#ap) body :is(#ptApp,#ptRun,#dgRoot,#arRoot,.app[data-mode]){
+ --ap-bg:#faf8ff;--ap-bg2:#f5f0ff;--ap-card:#fff;--ap-soft:#f5efff;--ap-ink:#30203e;--ap-mut:#60516e;
+ --ap-line:#cbbdd9;--ap-line2:#ded3e8;--ap-blue:#6233a2;--ap-blue-h:#4c267f;--ap-link:#542d8b;
+ --ap-green:#156241;--ap-red:#9c2847;--ap-orange:#844414;--ap-amber:#ffb833;
+ --ap-nav:#faf7ffef;--ap-fill:#ede5f7;--ap-seg:#fff;--ap-btn2:#eee3ff;--ap-band:#352344;
+ --ap-ok-bg:#dff6eb;--ap-bad-bg:#ffe8ee;--ap-warn-bg:#ffedc7;--ap-info-bg:#eee7ff;
+ --ap-sh:#40215320;--ap-toast:#352344; color-scheme:light
+}
+html:not(#ap) body :is(#dgRoot,.app[data-mode],#ptRun){
+ --ac:#6233a2;--ac2:#783392;--gd:#156241;--bd:#9c2847;--yl:#ffbe44;--ink:#30203e;--mut:#60516e;--soft:#f5efff
+}
+html:not(#ap) body :is(#dgRoot,.app[data-mode],#ptRun) .btn.ghost{
+ background:#eee3ff;color:#46266b;border:1px solid #ab91c6;font-weight:650
+}
+html:not(#ap) body :is(#dgRoot,.app[data-mode],#ptRun) .btn.ghost:hover:enabled{background:#dfcef4;color:#36204e}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc{
+ background:#fcfaff;border:1px solid #dfd2ed;border-inline-start:4px solid #9171bd;border-radius:16px;
+ margin-block:14px;padding:clamp(14px,2vw,22px);color:#30203e
+}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc:nth-of-type(3n+1){border-inline-start-color:#458f88}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc:nth-of-type(3n+2){border-inline-start-color:#dd9142}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc h4{color:#563280;margin:0 0 7px}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc .btn{min-height:40px;padding-inline:15px}
+html:not(#ap) body :is(#dgRoot,.app[data-mode]) #view .exc .why{color:#33584c}
+html:not(#ap) body :is(#ptApp,#ptRun,.app,#mqBar,.studio-bar) :is(button,a,summary,select,input,textarea):focus-visible{
+ outline:3px solid #53318a;outline-offset:3px;box-shadow:0 0 0 3px white
+}
+html:not(#ap) body .app[data-mode] #browse summary{background:linear-gradient(100deg,#efe6ff,#faf7ff)}
+html:not(#ap) body .app[data-mode] #browse .ts:nth-of-type(3n+2) summary{background:linear-gradient(100deg,#ddf5f1,#f4fcfa)}
+html:not(#ap) body .app[data-mode] #browse .ts:nth-of-type(3n) summary{background:linear-gradient(100deg,#ffedca,#fffbf3)}
+.live-classroom{--pt-p:#543383;--pt-p2:#603b90;--pt-bg:#faf8ff;--pt-ink:#30203e;--pt-mut:#60516e;--pt-line:#d6cbe3;background:var(--pt-bg)}
+html body.live-classroom #ptApp .pt-btn.primary{background:#6233a2;color:white;box-shadow:none}
+html body.live-classroom #ptApp .pt-btn.ghost{background:#eee3ff;color:#46266b;border-color:#ab91c6}

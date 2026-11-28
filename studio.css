@@ -43,3 +43,36 @@ html:not(#ap) body #arRoot .mode .go{color:var(--ap-link)}
 html:not(#ap) body #ptApp .pt-btn.primary,html:not(#ap) body #dgRoot .btn:not(.ghost),html:not(#ap) body #arRoot .btn:not(.ghost){border-radius:12px}
 html body:has(#ptRun:not([hidden])) .studio-bar{display:none}
 @media(max-width:700px){.studio-row{gap:8px;flex-wrap:wrap;padding:9px 14px}.studio-brand{font-size:1.12rem}.studio-row nav{order:3;flex-basis:100%}.studio-row nav a{flex:1;text-align:center;padding:7px}.studio-account{font-size:.93rem;padding:6px 11px}.studio-hero-inner{grid-template-columns:1fr;gap:24px;padding:32px 16px}.studio-paths button{padding:13px}.studio-intro p{margin:12px 0}}
+
+/* Arcade portraits and clear game controls at every step. */
+html:not(#ap) body #arRoot .app #modes [data-m="hang"] {--portrait-bg:#ffdda2;--portrait-shadow:#ecad72}
+html:not(#ap) body #arRoot .app #modes [data-m="tug"] {--portrait-bg:#a6eada;--portrait-shadow:#70c5bc}
+html:not(#ap) body #arRoot .app #modes [data-m="bomb"] {--portrait-bg:#ffccc6;--portrait-shadow:#efa5a8}
+html:not(#ap) body #arRoot .app #modes [data-m="chase"] {--portrait-bg:#d9ccff;--portrait-shadow:#b6a6ed}
+html:not(#ap) body #arRoot .app #modes .mode .ic {
+  display:grid;place-items:center;padding:6px;width:clamp(52px,7vw,78px);height:clamp(58px,7.5vw,84px);
+  border-radius:19px;background:
+    radial-gradient(ellipse 32% 6% at 50% 85%,var(--portrait-shadow) 85%,transparent),
+    radial-gradient(circle at 23% 23%,#fff9 0 3%,transparent 4%),
+    linear-gradient(145deg,#fff,var(--portrait-bg) 64%);
+  border:1px solid var(--portrait-shadow);
+}
+html:not(#ap) body #arRoot .app #modes .mode .ic img {width:78%;height:78%;object-fit:contain;image-rendering:pixelated}
+html:not(#ap) body #arRoot .app #stage {
+  background:radial-gradient(circle at 14% 18%,#fff9 0 1px,transparent 2px),
+    radial-gradient(circle at 72% 32%,#f5e6b7 0 1px,transparent 2px),
+    radial-gradient(ellipse at top left,#51458b,transparent 65%),linear-gradient(#332951,#19203c);
+  background-size:83px 63px,117px 89px,auto,auto;
+}
+html:not(#ap) body #arRoot .quest-sprite {image-rendering:pixelated}
+html:not(#ap) body #arRoot .app {--ap-blue:#594093;--ap-blue-h:#473075;--ap-btn2:#ede7f8;--ap-ink:#302341;--ap-fill:#eee7f6;--ap-link:#52378b;--ap-red:#92314c;--ap-ok-bg:#d8f5e2;--ap-bad-bg:#ffe4e5;--ap-green:#23694a;--ap-info-bg:#f1edff;--ap-line2:#b8a9c9;}
+html:not(#ap) body #arRoot .app .mode em {color:#754364}
+html:not(#ap) body #arRoot .app .steps span {background:#f3edf8;color:#4a3b5b;border:1px solid #c8b9d5}
+html:not(#ap) body #arRoot .app .steps span.on {background:#594093;color:white}
+html:not(#ap) body #arRoot .app :is(.lvl,select,.ico) {background:#fff;color:#302341;border:1px solid #bbaaCA}
+html:not(#ap) body #arRoot .app .lvl.on {border:2px solid #694aa5;background:#f1ebfb;box-shadow:0 0 0 2px #ddd1f2}
+html:not(#ap) body #arRoot .app :is(button,select):focus-visible {outline:3px solid #275880;outline-offset:3px}
+html:not(#ap) body #arRoot .app .opts button:is(.ok,.no) {opacity:1}
+@media(prefers-reduced-motion:reduce) {
+  html:not(#ap) body #arRoot .app #stage,html:not(#ap) body #arRoot .app #stage * {animation:none!important;transition:none!important}
+}

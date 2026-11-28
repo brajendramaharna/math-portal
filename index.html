@@ -7211,12 +7211,29 @@ const kdef=(n,f)=>{if(KDEF[n])throw new Error('dup K skill '+n);KDEF[n]=f};
 const via=(n,f)=>kdef(n,()=>{NAMEOV=n;try{return f()}finally{NAMEOV=null}});
 const stripH=h=>String(h).replace(/<svg[\s\S]*?<\/svg>/g,' ').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
 /* worked examples derived from the practice generator (text answers) */
-function autoEx(gen){const out=[],seen=new Set,keep=globalThis.__gsl;globalThis.__gsl=0;
- for(let i=0;i<80&&out.length<2;i++){const q=gen(0),qs=String(q.q),ix=qs.search(/<div class="(pic|hear)">|<svg|<div/),text=stripH(ix>=0?qs.slice(0,ix):qs)||'Look at the picture.';let fig=ix>=0?qs.slice(ix):undefined;
-  const html=/</.test(q.a),ans=html?(stripH(q.a)||'the picture shown below'):String(q.a);if(html&&!fig)fig=q.a;
-  const k=text+'|'+ans+'|'+(fig||'').length;if(seen.has(k))continue;seen.add(k);
-  out.push([text,ans,[['Read the question and look closely.','Find the numbers or pictures you need.'],['Work it out.',stripH(q.why)||'Think about each part.'],[html?'Find the matching picture.':`The answer is ${ans}.`,'Check that your answer makes sense.']],fig])}
- globalThis.__gsl=keep;return out}
+function autoEx(gen) {
+ const examples = [], seen = new Set(), previousLevel = globalThis.__gsl;
+ globalThis.__gsl = 0;
+ try {
+  for (let attempt = 0; attempt < 80 && examples.length < 2; attempt++) {
+   const question = gen(0);
+   const prompt = String(question.q);
+   const answer = String(question.a);
+   const key = JSON.stringify([prompt, answer]);
+   if (seen.has(key)) continue;
+   seen.add(key);
+   const steps = [
+    ['Read the question.', 'Identify what you need to find.'],
+    ['Work it out.', question.why || 'Use the information in the question.'],
+    ['Check your answer.', 'Compare your result with the question.']
+   ];
+   examples.push([prompt, answer, steps]);
+  }
+ } finally {
+  globalThis.__gsl = previousLevel;
+ }
+ return examples;
+}
 /* lean skill builder: 4 key ideas → concept map + step-by-step pages */
 function kmk(o){const key=o.key,vis=o.vis||[];
  const det=key.map((b,i)=>[b[1]+(b[2]?`\n▶ ${b[2]}`:''),vis[i]||ROW(FIG(`<span class="fbig">${stripH(b[2]||'✓')}</span>`,b[0]))]);
